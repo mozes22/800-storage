@@ -12,8 +12,16 @@ requests, and a detailed user view with navigation.
 - Angular Material
 
 ## API Endpoints
-- https://reqres.in/api/users?page={page}
-- https://reqres.in/api/users/{id}
+- Cards Data: https://reqres.in/api/users?page={page}
+- Single User: https://reqres.in/api/users/{id}
+
+## Documentation
+
+| Topic | Link |
+|-----|-----|
+| Angular Setup | [docs/ANGULAR.md](docs/ANGULAR.md) |
+| Project Setup | [docs/SETUP.md](docs/SETUP.md) |
+| Implementation Notes | [docs/IMPLEMENTATION_NOTES.md](docs/IMPLEMENTATION_NOTES.md) |
 
 ## Setup & Run
 ```bash
