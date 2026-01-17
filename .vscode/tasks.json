@@ -37,6 +37,22 @@
           }
         }
       }
+    },
+    {
+      "label": "Start 800 Storage",
+      "type": "shell",
+      "command": "tools/start-app.sh",
+      "problemMatcher": ["$tsc"],
+      "presentation": {
+        "focus": true,
+        "panel": "shared",
+        "reveal": "always",
+        "showReuseMessage": false,
+        "clear": true
+      },
+      "runOptions": {
+        "runOn": "folderOpen"
+      }
     }
   ]
 }
