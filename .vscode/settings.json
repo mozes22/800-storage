@@ -1,0 +1,108 @@
+{
+  "files.autoSave": "onFocusChange",
+  "files.trimTrailingWhitespace": true,
+  "git.mergeEditor": true,
+  "git.allowNoVerifyCommit": true,
+  "npm.packageManager": "npm",
+  "npm.enableRunFromFolder": true,
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": false,
+  "editor.cursorBlinking": "smooth",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[shellscript]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.fixAll.stylelint": "explicit"
+  },
+  "window.commandCenter": true,
+  "window.title": "800 Storage",
+  "explorer.compactFolders": false,
+  "explorer.fileNesting.patterns": {
+    "package.json": "package-lock.json, .npmrc, .nvmrc"
+  },
+  "search.exclude": {
+    "package-lock.json": true,
+    ".git": true,
+    "node_modules": true
+  },
+  "prettier.useEditorConfig": false,
+  "prettier.configPath": ".prettierrc",
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "json"
+  ],
+  "stylelint.packageManager": "npm",
+  "stylelint.configFile": "stylelint.config.mjs",
+  "stylelint.snippet": ["css", "scss"],
+  "stylelint.validate": ["css", "scss", "html"],
+  "typescript.format.semicolons": "insert",
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "terminal.integrated.defaultProfile.linux": "bash",
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
+  "terminal.integrated.enablePersistentSessions": true,
+  "terminal.integrated.persistentSessionReviveProcess": "onExitAndWindowClose",
+  "terminal.integrated.profiles.linux": {
+    "bash": {
+      "path": "bash",
+      "icon": "terminal-bash",
+      "args": ["-i"]
+    }
+  },
+  "indentRainbow.colors": [
+    "rgba(255,255,64,0.1)",
+    "rgba(199,65,132,0.1)",
+    "rgba(255,127,255,0.1)",
+    "rgba(51,56,233,0.1)",
+    "rgba(127,255,127,0.1)",
+    "rgba(79,236,236,0.1)",
+    "rgba(254,252,191,0.1)"
+  ],
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.editor.highlightModifiedTabs": true,
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#F26522",
+    "activityBar.foreground": "#ffffff",
+    "activityBar.border": "#CC3300",
+    "activityBar.activeBackground": "#E04E1B",
+    "activityBar.inactiveForeground": "#ffffffcc",
+    "activityBarBadge.background": "#ffffff",
+    "activityBarBadge.foreground": "#333333",
+    "badge.background": "#F26522",
+    "commandCenter.activeBackground": "#E04E1B",
+    "commandCenter.activeBorder": "#ffffff",
+    "commandCenter.activeForeground": "#ffffff",
+    "commandCenter.background": "#ffffff",
+    "commandCenter.border": "#F26522",
+    "commandCenter.inactiveBorder": "#F26522",
+    "commandCenter.inactiveForeground": "#333333",
+    "panelTitle.activeForeground": "#333333",
+    "panelTitle.inactiveForeground": "#666666",
+    "panelTitle.activeBorder": "#F26522",
+    "sash.hoverBorder": "#F26522",
+    "sideBarSectionHeader.foreground": "#333333",
+    "statusBar.background": "#F26522",
+    "statusBar.foreground": "#ffffff",
+    "statusBarItem.activeBackground": "#E04E1B",
+    "statusBarItem.compactHoverBackground": "#E04E1B",
+    "statusBarItem.compactHoverForeground": "#ffffff",
+    "statusBarItem.hoverBackground": "#E04E1B",
+    "statusBarItem.hoverForeground": "#ffffff",
+    "statusBarItem.remoteBackground": "#ffffff",
+    "statusBarItem.remoteForeground": "#333333",
+    "statusBarItem.remoteHoverBackground": "#E04E1B",
+    "statusBarItem.remoteHoverForeground": "#ffffff",
+    "tab.activeBorder": "#F26522",
+    "tab.activeBorderTop": "#F26522",
+    "titleBar.activeBackground": "#F26522",
+    "titleBar.activeForeground": "#ffffff",
+    "titleBar.inactiveBackground": "#E04E1B",
+    "titleBar.inactiveForeground": "#ffffffcc",
+    "toolbar.hoverBackground": "#E04E1B"
+  }
+}
