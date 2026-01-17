@@ -1,1 +1,4 @@
+/* Main styles entry point (Tailwind CSS) */
+@import "./styles/main.css";
+
 /* You can add global styles to this file, and also import other style files */
