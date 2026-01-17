@@ -1,0 +1,48 @@
+{
+  "plugins": ["prettier-plugin-tailwindcss"],
+  "tailwindStylesheet": "./src/styles/main.css",
+  "singleQuote": true,
+  "trailingComma": "none",
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"],
+      "options": {
+        "parser": "typescript",
+        "printWidth": 120,
+        "singleAttributePerLine": false
+      }
+    },
+    {
+      "files": ["*.html"],
+      "options": {
+        "arrowParens": "avoid",
+        "embeddedLanguageFormatting": "auto",
+        "htmlWhitespaceSensitivity": "strict",
+        "printWidth": 100,
+        "singleQuote": false,
+        "semi": true,
+        "parser": "angular"
+      }
+    },
+    {
+      "files": ["*.css", "*.scss"],
+      "options": {
+        "parser": "scss",
+        "singleQuote": false
+      }
+    },
+    {
+      "files": ["*.js", "*.mjs"],
+      "options": {
+        "printWidth": 100
+      }
+    },
+    {
+      "files": "*.md",
+      "options": {
+        "printWidth": 200,
+        "proseWrap": "preserve"
+      }
+    }
+  ]
+}
