@@ -1,0 +1,13 @@
+#!/bin/bash
+
+printf '\n\033[35mthe pre-push hook initiated\033[0m\n'
+
+    printf '\n\033[47;31m prod build started \033[0m\n'
+      npm run build || true
+    printf '\033[47;31m prod build finished \033[0m\n'
+
+    printf '\n\033[47;31m test started \033[0m\n'
+      npm run test || true
+    printf '\033[47;31m test finished \033[0m\n'
+
+printf '\033[35mthe pre-push hook is done\n\033[0m'

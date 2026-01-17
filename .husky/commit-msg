@@ -1,0 +1,5 @@
+#!/bin/bash
+
+printf '\033[35mthe commit-msg hook initiated\033[0m\n'
+
+printf '\033[35mthe commit-msg hook is done\n\033[0m'

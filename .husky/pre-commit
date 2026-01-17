@@ -1,0 +1,9 @@
+#!/bin/bash
+
+printf '\n\033[35mthe pre-commit hook initiated\033[0m\n'
+
+	printf '\n\033[47;31m lint staged started \033[0m\n'
+    NODE_OPTIONS='--max-old-space-size=8192' npm exec lint-staged --concurrent false --relative
+	printf '\033[47;31m lint staged finished \033[0m\n'
+
+printf '\033[35mthe pre-commit hook is done\n\033[0m'

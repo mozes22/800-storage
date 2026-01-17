@@ -8,7 +8,8 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:800-storage": "node dist/800-storage/server/server.mjs",
-    "lint": "ng lint"
+    "lint": "ng lint",
+    "prepare": "husky"
   },
   "private": true,
   "dependencies": {
@@ -41,6 +42,7 @@
     "angular-eslint": "21.0.1",
     "eslint": "^9.39.1",
     "globals": "^17.0.0",
+    "husky": "^9.1.7",
     "jasmine-core": "~5.6.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",

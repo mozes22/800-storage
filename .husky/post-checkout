@@ -1,0 +1,20 @@
+#!/bin/bash
+
+printf '\n\033[35mthe post-checkout hook initiated\033[0m\n'
+
+	printf '\n\033[47;31m ES linting started \033[0m\n'
+    npm exec eslint "src/**/*.{js,ts}" -- --quiet --cache --cache-location "./.lint-cache/eslint/" || true
+	printf '\033[47;31m ES linting finished \033[0m\n'
+
+	printf '\n\033[47;31m Style linting started \033[0m\n'
+    npm exec stylelint "src/**/*.css" -- --quiet --cache --cache-location "./.lint-cache/stylelint/" || true
+	printf '\033[47;31m Style linting finished \033[0m\n'
+
+	printf '\n\033[47;31m prettier started \033[0m\n'
+    npm exec prettier --check "src/**/*.{html,scss,css}" || true
+	printf '\033[47;31m prettier finished \033[0m\n'
+
+	printf "\n\e[33mMake sure to install missing dependencies if any\e[0m\n"
+	printf "\e[33mMake sure to run ESLint, StyleLint, and Prettier to fix any potential errors before \"commit\" and \"push\"\e[0m\n"
+
+printf '\033[35mthe post-checkout hook is done\n\033[0m'

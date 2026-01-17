@@ -1,0 +1,9 @@
+#!/bin/bash
+
+printf '\n\033[35mthe post-merge hook initiated\033[0m\n'
+
+		printf '\n\033[47;31m outdated packages check started \033[0m\n'
+			npm outdated || true
+		printf '\033[47;31m outdated packages check finished \033[0m\n'
+
+printf '\033[35mthe post-merge hook is done\n\033[0m'
