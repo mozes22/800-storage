@@ -11,6 +11,9 @@ try {
 
   if (checkNodeModules()) {
     await dirTree();
+    const { runStart } = await import('./run-scripts/run-start.mjs');
+    await runStart();
+    process.exit(0);
   }
 } catch (error) {
   console.error(

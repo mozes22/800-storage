@@ -67,3 +67,6 @@ yarn-error.log*
 
 # Directory tree
 directory-tree.txt
+
+# Lint Cache
+.lint-cache

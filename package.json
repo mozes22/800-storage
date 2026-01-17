@@ -30,6 +30,7 @@
     "pkg:check": "npm-check-updates --packageManager npm",
     "pkg:update": "npm-check-updates --packageManager npm -u",
     "pkg:outdated": "npm outdated || true",
+    "gen:tree": "node ./tools/misc-scripts/dir-tree.mjs",
     "prepare": "husky"
   },
   "dependencies": {
