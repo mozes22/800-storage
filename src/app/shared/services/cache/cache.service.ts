@@ -131,10 +131,7 @@ export class CacheService {
   /**
    * Set data in IndexedDB
    */
-  async #setInIndexedDB<T extends CacheValue>(
-    key: CacheKey,
-    entry: CacheEntry<T>
-  ): Promise<void> {
+  async #setInIndexedDB<T extends CacheValue>(key: CacheKey, entry: CacheEntry<T>): Promise<void> {
     try {
       const db = await this.#openDatabase();
       const transaction = db.transaction([this.#storeName], 'readwrite');
