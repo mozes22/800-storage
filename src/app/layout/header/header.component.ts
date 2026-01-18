@@ -48,9 +48,10 @@ export class HeaderComponent implements OnInit {
         takeUntilDestroyed(this.#destroyRef)
       )
       .subscribe((event) => {
-        this.showSearch.set(event.url.startsWith('/users') && !event.url.startsWith('/users/'));
+        const shouldShow = this.#shouldShowSearch(event.url);
+        this.showSearch.set(shouldShow);
 
-        if (!this.showSearch().valueOf()) {
+        if (!shouldShow) {
           this.searchControl.setValue('', { emitEvent: false });
           this.#resetSearch();
         }
@@ -58,6 +59,10 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    // Initialize showSearch based on current route (handles page refresh)
+    const shouldShow = this.#shouldShowSearch(this.#router.url);
+    this.showSearch.set(shouldShow);
+
     this.searchControl.valueChanges
       .pipe(
         debounceTime(300),
@@ -91,6 +96,10 @@ export class HeaderComponent implements OnInit {
         this.searchResult.set(response.data);
         this.searchState.set('found');
       });
+  }
+
+  #shouldShowSearch(url: string): boolean {
+    return url.startsWith('/users') && !url.startsWith('/users/');
   }
 
   #resetSearch(): void {
