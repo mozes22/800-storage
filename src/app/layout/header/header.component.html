@@ -1,11 +1,75 @@
-<header class="tw:border-b tw:border-gray-200 tw:bg-white tw:px-8 tw:py-4 tw:shadow-sm">
-  <div class="tw:mx-auto tw:flex tw:max-w-7xl tw:items-center tw:justify-between">
-    <h1 class="tw:m-0 tw:text-2xl tw:font-semibold tw:text-gray-900">800 Storage</h1>
-    <nav class="tw:flex tw:gap-6">
-      <a href="/" class="tw:text-gray-700 tw:hover:text-gray-900">Home</a>
-      <a href="/services" class="tw:text-gray-700 tw:hover:text-gray-900">Users</a>
-      <a href="/about" class="tw:text-gray-700 tw:hover:text-gray-900">About</a>
-      <a href="/contact" class="tw:text-gray-700 tw:hover:text-gray-900">Contact</a>
+<header class="tw:border-b tw:border-gray-200 tw:bg-white tw:px-8 tw:py-3 tw:shadow-sm">
+  <div
+    class="tw:mx-auto tw:flex tw:max-w-7xl tw:flex-wrap tw:items-center tw:justify-between tw:gap-4"
+  >
+    <a
+      routerLink="/"
+      class="tw:text-xl tw:font-semibold tw:text-primary tw:transition-[color] tw:ease-in-out tw:hover:text-secondary"
+    >
+      800 Storage
+    </a>
+
+    <div class="tw:w-56 tw:sm:w-72" [class.tw:invisible]="!showSearch()">
+      <div class="tw:focus-within:[&_mat-icon]:tw:text-primary! tw:relative">
+        <mat-icon
+          class="tw:absolute tw:top-1/2 tw:left-2 tw:z-10 tw:-translate-y-1/2 tw:text-gray-400! tw:transition-colors tw:duration-200 tw:hover:text-primary!"
+          >search</mat-icon
+        >
+        <input
+          id="user-search"
+          type="search"
+          [formControl]="searchControl"
+          [matAutocomplete]="userSearch"
+          placeholder="Search by User id"
+          class="tw:w-full tw:rounded-md tw:border tw:border-gray-200 tw:bg-warm-white tw:py-2 tw:pr-2 tw:pl-8 tw:text-sm tw:placeholder-gray-400 tw:transition-[border-color,background-color,shadow] tw:duration-200 tw:ease-in-out tw:hover:border-primary tw:hover:bg-white tw:hover:shadow-[0_2px_4px_-1px_rgb(226_138_118/0.1)] tw:focus:border-primary tw:focus:bg-white tw:focus:shadow-[0_0_0_3px_rgb(226_138_118/0.3),0_4px_6px_-1px_rgb(226_138_118/0.1)] tw:focus:outline-none"
+        />
+      </div>
+
+      <mat-autocomplete
+        #userSearch="matAutocomplete"
+        autoActiveFirstOption
+        (optionSelected)="selectSearchResult()"
+      >
+        @if (searchState() === "loading") {
+          <mat-option disabled>
+            <mat-progress-spinner diameter="18" mode="indeterminate"></mat-progress-spinner>
+          </mat-option>
+        } @else if (searchState() === "invalid") {
+          <mat-option disabled>Enter a numeric user id.</mat-option>
+        } @else if (searchState() === "not-found") {
+          <mat-option disabled>No user found.</mat-option>
+        } @else if (searchState() === "found" && searchResult()) {
+          <mat-option
+            [value]="searchResult()!.id"
+            class="tw:transition-[background-color] tw:ease-in-out tw:hover:bg-black/10!"
+          >
+            <div class="tw:flex tw:items-center tw:gap-3">
+              <img
+                class="tw:h-10 tw:w-10 tw:rounded-full"
+                [src]="searchResult()!.avatar"
+                [alt]="searchResult()!.first_name + ' ' + searchResult()!.last_name"
+              />
+              <div class="tw:flex tw:flex-col">
+                <span class="tw:text-sm tw:font-medium tw:text-gray-900"
+                  >{{ searchResult()!.first_name }} {{ searchResult()!.last_name }}</span
+                >
+                <span class="tw:text-xs tw:text-gray-500">View details</span>
+              </div>
+            </div>
+          </mat-option>
+        }
+      </mat-autocomplete>
+    </div>
+
+    <nav class="tw:flex tw:gap-4 tw:sm:gap-5">
+      @for (link of navLinks(); track link.path) {
+        <a
+          [routerLink]="link.path"
+          class="tw:relative tw:pb-0.5 tw:text-black tw:transition-all tw:ease-in-out tw:after:absolute tw:after:bottom-0 tw:after:left-0 tw:after:h-0.5 tw:after:w-0 tw:after:bg-primary tw:after:transition-[width] tw:after:duration-300 tw:after:ease-in-out tw:after:content-[''] tw:hover:text-secondary tw:hover:after:w-full"
+        >
+          {{ link.label }}
+        </a>
+      }
     </nav>
   </div>
 </header>
