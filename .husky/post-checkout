@@ -3,15 +3,15 @@
 printf '\n\033[35mthe post-checkout hook initiated\033[0m\n'
 
 	printf '\n\033[47;31m ES linting started \033[0m\n'
-    npm exec eslint "src/**/*.{js,ts}" -- --quiet --cache --cache-location "./.lint-cache/eslint/" || true
+    npm exec eslint "src/**/*.{js,ts,html}" -- --quiet --cache --cache-location "./.lint-cache/eslint/" || true
 	printf '\033[47;31m ES linting finished \033[0m\n'
 
 	printf '\n\033[47;31m Style linting started \033[0m\n'
-    npm exec stylelint "src/**/*.css" -- --quiet --cache --cache-location "./.lint-cache/stylelint/" || true
+    npm exec stylelint "src/**/*.{css,scss}" -- --quiet --cache --cache-location "./.lint-cache/stylelint/" || true
 	printf '\033[47;31m Style linting finished \033[0m\n'
 
 	printf '\n\033[47;31m prettier started \033[0m\n'
-    npm exec prettier --check "src/**/*.{html,scss,css}" || true
+    npm exec prettier -- --check "src/**/*.{html,scss,css,ts,js,json,md}" || true
 	printf '\033[47;31m prettier finished \033[0m\n'
 
 	printf "\n\e[33mMake sure to install missing dependencies if any\e[0m\n"

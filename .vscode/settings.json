@@ -33,6 +33,7 @@
   },
   "prettier.useEditorConfig": false,
   "prettier.configPath": ".prettierrc",
+  "prettier.ignorePath": ".prettierignore",
   "eslint.validate": [
     "javascript",
     "javascriptreact",
