@@ -1,6 +1,6 @@
 import { Component, DestroyRef, inject, OnInit, signal } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { ActivatedRoute, RouterLink } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { catchError, EMPTY, switchMap } from 'rxjs';
 import { MatButtonModule } from '@angular/material/button';
@@ -14,7 +14,6 @@ import { ReqresUser } from '../../shared/interfaces/user/user.interface';
 @Component({
   selector: 'app-user-details',
   imports: [
-    RouterLink,
     MatButtonModule,
     MatCardModule,
     MatProgressSpinnerModule,
