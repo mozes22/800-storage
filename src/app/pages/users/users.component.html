@@ -18,7 +18,7 @@
         @for (user of users(); track user.id) {
           <a [routerLink]="['/users', user.id]" class="group tw:block">
             <mat-card
-              class="tw:border! tw:border-transparent tw:px-4! tw:py-2! tw:transition-[border-color,box-shadow,transform] tw:ease-in-out tw:hover:scale-[1.01] tw:hover:border-primary! tw:hover:shadow-none!"
+              class="tw:border! tw:border-transparent tw:px-4! tw:py-2! tw:transition-all tw:ease-in-out tw:hover:scale-[1.01] tw:hover:border-primary! tw:hover:shadow-none!"
             >
               <div class="tw:flex tw:flex-row tw:items-center tw:justify-around tw:gap-8">
                 <mat-card-header class="tw:p-0!">
