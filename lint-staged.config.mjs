@@ -7,7 +7,7 @@ export default {
     'npm exec stylelint -- --fix --quiet --cache --cache-location ./.lint-cache/stylelint/',
   ],
   '*.{js,mjs,ts,css,scss,html,md,json}': [
-    'npm exec prettier -- --write',
+    'npm exec prettier -- --ignore-path .prettierignore --write',
   ],
   '*.spec.{ts,js,mjs}': ['echo "Skipping spec files..."'],
 };
