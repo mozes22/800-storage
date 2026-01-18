@@ -1,3 +1,10 @@
 @theme {
   /* Add custom color definitions here */
+  --color-primary: #e28a76;
+  --color-secondary: #7e423a;
+  --color-background: #fff;
+  --color-off-white: #fdfbfb;
+  --color-warm-white: #fffafa;
+  --color-cool-white: #fafffd;
+  --color-black: #333;
 }

@@ -1,0 +1,16 @@
+@layer components {
+  select {
+    &:has(.select-disabled) {
+      cursor: not-allowed;
+    }
+
+    &:has(.disabled) {
+      cursor: not-allowed;
+    }
+
+    &:disabled,
+    &[disabled] {
+      cursor: not-allowed !important;
+    }
+  }
+}

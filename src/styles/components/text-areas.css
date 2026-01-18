@@ -1,0 +1,16 @@
+@layer components {
+  textarea {
+    &:has(.textarea-disabled) {
+      cursor: not-allowed;
+    }
+
+    &:has(.disabled) {
+      cursor: not-allowed;
+    }
+
+    &:disabled,
+    &[disabled] {
+      cursor: not-allowed !important;
+    }
+  }
+}

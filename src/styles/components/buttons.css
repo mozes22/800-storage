@@ -1,3 +1,16 @@
 @layer components {
-  /* Add button component classes here */
+  button {
+    &:has(.button-disabled) {
+      cursor: not-allowed;
+    }
+
+    &:has(.disabled) {
+      cursor: not-allowed;
+    }
+
+    &:disabled,
+    &[disabled] {
+      cursor: not-allowed !important;
+    }
+  }
 }
