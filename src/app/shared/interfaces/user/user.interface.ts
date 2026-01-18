@@ -1,4 +1,3 @@
-
 export interface ReqresUser {
   id: number;
   email: string;

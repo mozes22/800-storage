@@ -13,7 +13,7 @@ export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
-    provideHttpClient(withFetch(),withInterceptors([authInterceptor, errorInterceptor, loadingInterceptor])),
+    provideHttpClient(withFetch(), withInterceptors([authInterceptor, errorInterceptor, loadingInterceptor])),
     importProvidersFrom(MatSnackBarModule),
     provideClientHydration(withEventReplay())
   ]

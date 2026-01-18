@@ -12,5 +12,4 @@ export class UsersService {
   getUsers(page: number): Observable<UsersResponse> {
     return this.#api.get<UsersResponse>(USERS_ENDPOINTS.list(page));
   }
-
 }
