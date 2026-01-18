@@ -52,7 +52,7 @@ export class HeaderComponent implements OnInit {
 
         if (!this.showSearch().valueOf()) {
           this.searchControl.setValue('', { emitEvent: false });
-          this.resetSearch();
+          this.#resetSearch();
         }
       });
   }
@@ -66,7 +66,7 @@ export class HeaderComponent implements OnInit {
           const value = rawValue.trim();
 
           if (!value) {
-            this.resetSearch();
+            this.#resetSearch();
             return EMPTY;
           }
 
@@ -93,7 +93,7 @@ export class HeaderComponent implements OnInit {
       });
   }
 
-  private resetSearch(): void {
+  #resetSearch(): void {
     this.searchState.set('idle');
     this.searchResult.set(null);
   }

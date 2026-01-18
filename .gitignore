@@ -21,7 +21,7 @@ npm-debug.log
 yarn-error.log
 
 # Dependency files
-/package-lock.json
+# /package-lock.json
 /yarn.lock
 
 # IDEs and editors
@@ -39,6 +39,7 @@ yarn-error.log
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+!.vscode/tailwind.json
 .history/*
 
 # Miscellaneous
