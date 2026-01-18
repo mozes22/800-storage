@@ -16,7 +16,7 @@
     @if (!isLoading() && users().length > 0) {
       <div class="tw:grid tw:gap-4">
         @for (user of users(); track user.id) {
-          <a [routerLink]="['/users', user.id]" class="group tw:block">
+          <a [routerLink]="['/users', user.id]" class="tw:block">
             <mat-card
               class="tw:border! tw:border-transparent tw:px-4! tw:py-2! tw:transition-all tw:ease-in-out tw:hover:scale-[1.01] tw:hover:border-primary! tw:hover:shadow-none!"
             >

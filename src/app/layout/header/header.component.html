@@ -10,9 +10,9 @@
     </a>
 
     <div class="tw:w-56 tw:sm:w-72" [class.tw:invisible]="!showSearch()">
-      <div class="tw:focus-within:[&_mat-icon]:tw:text-primary! tw:relative">
+      <div class="tw:focus-within:[&_mat-icon]:text-primary! tw:hover:[&_mat-icon]:text-primary! tw:relative">
         <mat-icon
-          class="tw:absolute tw:top-1/2 tw:left-2 tw:z-10 tw:-translate-y-1/2 tw:text-gray-400! tw:transition-colors tw:duration-200 tw:hover:text-primary!"
+          class="tw:absolute tw:top-1/2 tw:left-2 tw:z-10 tw:-translate-y-1/2 tw:text-gray-400! tw:transition-colors"
           >search</mat-icon
         >
         <input
@@ -21,7 +21,7 @@
           [formControl]="searchControl"
           [matAutocomplete]="userSearch"
           placeholder="Search by User id"
-          class="tw:w-full tw:rounded-md tw:border tw:border-gray-200 tw:bg-warm-white tw:py-2 tw:pr-2 tw:pl-8 tw:text-sm tw:placeholder-gray-400 tw:transition-[border-color,background-color,shadow] tw:duration-200 tw:ease-in-out tw:hover:border-primary tw:hover:bg-white tw:hover:shadow-[0_2px_4px_-1px_rgb(226_138_118/0.1)] tw:focus:border-primary tw:focus:bg-white tw:focus:shadow-[0_0_0_3px_rgb(226_138_118/0.3),0_4px_6px_-1px_rgb(226_138_118/0.1)] tw:focus:outline-none"
+          class="tw:w-full tw:rounded-md tw:border tw:border-gray-200 tw:bg-warm-white tw:py-2 tw:pr-2 tw:pl-8 tw:text-sm tw:placeholder-gray-400 tw:transition-[border-color,background-color,shadow] tw:ease-in-out tw:hover:border-primary tw:hover:bg-white tw:hover:shadow-[0_2px_4px_-1px_rgb(226_138_118/0.1)] tw:focus:border-primary tw:focus:bg-white tw:focus:shadow-[0_0_0_3px_rgb(226_138_118/0.3),0_4px_6px_-1px_rgb(226_138_118/0.1)] tw:focus:outline-none"
         />
       </div>
 
@@ -65,7 +65,7 @@
       @for (link of navLinks(); track link.path) {
         <a
           [routerLink]="link.path"
-          class="tw:relative tw:pb-0.5 tw:text-black tw:transition-all tw:ease-in-out tw:after:absolute tw:after:bottom-0 tw:after:left-0 tw:after:h-0.5 tw:after:w-0 tw:after:bg-primary tw:after:transition-[width] tw:after:duration-300 tw:after:ease-in-out tw:after:content-[''] tw:hover:text-secondary tw:hover:after:w-full"
+          class="tw:relative tw:pb-0.5 tw:text-black tw:transition-all tw:ease-in-out tw:after:absolute tw:after:bottom-0 tw:after:left-0 tw:after:h-0.5 tw:after:w-0 tw:after:bg-primary tw:after:transition-[width] tw:after:ease-in-out tw:after:content-[''] tw:hover:text-secondary tw:hover:after:w-full"
         >
           {{ link.label }}
         </a>
