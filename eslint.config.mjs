@@ -12,8 +12,11 @@ export default defineConfig([
     extends: ['js/recommended'],
     languageOptions: { globals: globals.browser }
   },
-  tseslint.configs.recommended,
-  tseslint.configs.stylistic,
+  {
+    files: ['**/*.{ts,mts,cts}'],
+    extends: [tseslint.configs.recommended, tseslint.configs.stylistic],
+    languageOptions: { globals: globals.browser }
+  },
   {
     files: ['**/*.ts'],
     plugins: { angular },
