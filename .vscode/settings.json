@@ -59,6 +59,7 @@
       "args": ["-i"]
     }
   },
+  "css.customData": [".vscode/tailwind.json"],
   "indentRainbow.colors": [
     "rgba(255,255,64,0.1)",
     "rgba(199,65,132,0.1)",
