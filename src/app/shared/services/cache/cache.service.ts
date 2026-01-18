@@ -144,6 +144,7 @@ export class CacheService {
       });
     } catch (error) {
       console.error('Error setting in IndexedDB:', error);
+      return Promise.reject(error);
     }
   }
 
@@ -163,6 +164,7 @@ export class CacheService {
       });
     } catch (error) {
       console.error('Error clearing IndexedDB:', error);
+      return Promise.reject(error);
     }
   }
 
@@ -182,6 +184,7 @@ export class CacheService {
       });
     } catch (error) {
       console.error('Error deleting from IndexedDB:', error);
+      return Promise.reject(error);
     }
   }
 
