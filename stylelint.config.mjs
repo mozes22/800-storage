@@ -9,5 +9,13 @@ export default {
     '**/tailwind.scss',
     './src/app/**/*.ts',
     '*.min.css'
-  ]
+  ],
+  rules: {
+    'at-rule-no-unknown': [
+      true,
+      {
+        ignoreAtRules: ['reference', 'apply', 'layer', 'theme', 'utility']
+      }
+    ]
+  }
 };

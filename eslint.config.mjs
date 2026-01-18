@@ -6,7 +6,6 @@ import angular from 'angular-eslint';
 import json from '@eslint/json';
 import unusedImportsPlugin from 'eslint-plugin-unused-imports';
 
-
 export default defineConfig([
   {
     files: ['**/*.{js,mjs,cjs,ts,mts,cts}'],
@@ -16,10 +15,7 @@ export default defineConfig([
   },
   {
     files: ['**/*.{ts,mts,cts}'],
-    extends: [
-      tseslint.configs.recommended,
-      tseslint.configs.stylistic
-    ],
+    extends: [tseslint.configs.recommended, tseslint.configs.stylistic],
     languageOptions: { globals: globals.browser }
   },
   {
@@ -45,15 +41,12 @@ export default defineConfig([
         }
       ],
       'unused-imports/no-unused-imports': 'error',
-      'unused-imports/no-unused-vars': 'error',
+      'unused-imports/no-unused-vars': 'error'
     }
   },
   {
     files: ['**/*.html'],
-    extends: [
-      ...angular.configs.templateRecommended,
-      ...angular.configs.templateAccessibility
-    ]
+    extends: [...angular.configs.templateRecommended, ...angular.configs.templateAccessibility]
   },
   {
     files: ['**/*.json'],
