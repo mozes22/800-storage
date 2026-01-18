@@ -1,51 +1,52 @@
-import js from "@eslint/js";
-import globals from "globals";
-import tseslint from "typescript-eslint";
-import angular from "angular-eslint";
-import json from "@eslint/json";
+import { defineConfig } from 'eslint/config';
+import js from '@eslint/js';
+import globals from 'globals';
+import tseslint from 'typescript-eslint';
+import angular from 'angular-eslint';
+import json from '@eslint/json';
 
-export default [
+export default defineConfig([
   {
-    files: ["**/*.{js,mjs,cjs,ts,mts,cts}"],
-    ...js.configs.recommended,
+    files: ['**/*.{js,mjs,cjs,ts,mts,cts}'],
+    plugins: { js },
+    extends: ['js/recommended'],
     languageOptions: { globals: globals.browser }
   },
+  tseslint.configs.recommended,
+  tseslint.configs.stylistic,
   {
-    files: ["**/*.{ts,mts,cts}"],
-    ...tseslint.configs.recommended,
-    ...tseslint.configs.stylistic,
-  },
-  {
-    files: ["**/*.ts"],
-    ...angular.configs.tsRecommended,
+    files: ['**/*.ts'],
+    plugins: { angular },
+    extends: [...angular.configs.tsRecommended],
     processor: angular.processInlineTemplates,
     rules: {
-      "@angular-eslint/directive-selector": [
-        "error",
+      '@angular-eslint/directive-selector': [
+        'error',
         {
-          type: "attribute",
-          prefix: "app",
-          style: "camelCase",
-        },
+          type: 'attribute',
+          prefix: 'app',
+          style: 'camelCase'
+        }
       ],
-      "@angular-eslint/component-selector": [
-        "error",
+      '@angular-eslint/component-selector': [
+        'error',
         {
-          type: "element",
-          prefix: "app",
-          style: "kebab-case",
-        },
-      ],
-    },
+          type: 'element',
+          prefix: 'app',
+          style: 'kebab-case'
+        }
+      ]
+    }
   },
   {
-    files: ["**/*.html"],
-    ...angular.configs.templateRecommended,
-    ...angular.configs.templateAccessibility,
-    rules: {},
+    files: ['**/*.html'],
+    plugins: { angular },
+    extends: [...angular.configs.templateRecommended, ...angular.configs.templateAccessibility]
   },
   {
-    files: ["**/*.json"],
-    ...json.configs.recommended
-  },
-];
+    files: ['**/*.json'],
+    plugins: { json },
+    language: 'json/json',
+    extends: ['json/recommended']
+  }
+]);

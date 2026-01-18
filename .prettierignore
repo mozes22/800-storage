@@ -4,3 +4,6 @@ coverage
 dist
 *.svg
 package-lock.json
+node_modules
+.lint-cache
+.angular

@@ -9,10 +9,14 @@
   "editor.formatOnPaste": false,
   "editor.cursorBlinking": "smooth",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "[shellscript]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
   },
   "editor.codeActionsOnSave": {
+    "source.fixAll.prettier": "explicit",
     "source.fixAll.eslint": "explicit",
     "source.fixAll.stylelint": "explicit"
   },
