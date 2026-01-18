@@ -1,6 +1,6 @@
 import { inject, Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { switchMap, tap } from 'rxjs/operators';
+import { switchMap, take, tap } from 'rxjs/operators';
 
 import { ApiService } from '../api/api.service';
 import { CacheService } from '../cache/cache.service';
@@ -26,7 +26,7 @@ export class UsersService {
         return this.#api.get<UsersResponse>(USERS_ENDPOINTS.list(page)).pipe(
           tap((response) => {
             // Cache the response
-            this.#cache.set(cacheKey, response).subscribe();
+            this.#cache.set(cacheKey, response).pipe(take(1)).subscribe();
           })
         );
       })
