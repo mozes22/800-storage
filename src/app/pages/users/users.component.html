@@ -1,0 +1,63 @@
+<section class="tw:mx-auto tw:flex tw:w-full tw:max-w-4xl tw:flex-col tw:gap-6">
+  <header class="tw:text-center">
+    <h1 class="tw:text-3xl tw:font-semibold tw:text-gray-900">Users</h1>
+    <p class="tw:mt-2 tw:text-gray-600">Browse the storage team members and contacts.</p>
+  </header>
+
+  <div class="tw:mx-auto tw:w-1/2">
+    @if (isLoading()) {
+      <div class="tw:mt-6 tw:flex tw:justify-center">
+        <mat-progress-spinner diameter="32" mode="indeterminate"></mat-progress-spinner>
+      </div>
+    } @else if (users().length === 0) {
+      <p class="tw:mt-6 tw:text-center tw:text-sm tw:text-gray-500"> No users found. </p>
+    }
+
+    @if (!isLoading() && users().length > 0) {
+      <div class="tw:grid tw:gap-4">
+        @for (user of users(); track user.id) {
+          <a [routerLink]="['/users', user.id]" class="group tw:block">
+            <mat-card
+              class="tw:border! tw:border-transparent tw:px-4! tw:py-2! tw:transition-[border-color,box-shadow,transform] tw:ease-in-out tw:hover:scale-[1.01] tw:hover:border-primary! tw:hover:shadow-none!"
+            >
+              <div class="tw:flex tw:flex-row tw:items-center tw:justify-around tw:gap-8">
+                <mat-card-header class="tw:p-0!">
+                  <mat-card-title
+                    class="tw:mb-2! tw:text-center tw:text-sm! tw:font-medium tw:text-gray-400"
+                  >
+                    User #{{ user.id }}
+                  </mat-card-title>
+                  <mat-card-subtitle>
+                    <img
+                      class="tw:m-0! tw:h-20! tw:w-20! tw:rounded-full"
+                      mat-card-avatar
+                      [src]="user.avatar"
+                      [alt]="user.first_name + ' ' + user.last_name"
+                    />
+                  </mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content class="tw:p-0!">
+                  <p class="tw:mb-2! tw:text-sm! tw:font-medium tw:text-black">
+                    {{ user.first_name }} {{ user.last_name }}
+                  </p>
+                  <p class="tw:mb-2! tw:text-sm! tw:font-medium tw:text-black">
+                    {{ user.email }}
+                  </p>
+                </mat-card-content>
+              </div>
+            </mat-card>
+          </a>
+        }
+      </div>
+    }
+  </div>
+
+  <mat-paginator
+    class="tw:mx-auto tw:w-full"
+    [length]="totalUsers()"
+    [pageSize]="pageSize()"
+    [pageIndex]="currentPage() - 1"
+    [pageSizeOptions]="[pageSize()]"
+    (page)="onPageChange($event)"
+  ></mat-paginator>
+</section>
