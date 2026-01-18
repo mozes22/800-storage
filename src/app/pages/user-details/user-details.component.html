@@ -1,0 +1,53 @@
+<section class="tw:mx-auto tw:flex tw:w-full tw:max-w-3xl tw:flex-col tw:gap-6">
+  <button
+    mat-stroked-button
+    type="button"
+    class="tw:group tw:w-fit tw:items-center tw:transition-all tw:ease-in-out tw:hover:bg-black/5! tw:hover:shadow-md!"
+    (click)="goBack()"
+  >
+    <mat-icon
+      class="tw:mr-0 tw:h-[18px] tw:w-[18px] tw:max-w-0 tw:overflow-hidden tw:text-lg tw:opacity-0 tw:transition-[opacity,max-width,margin-right] tw:ease-in-out tw:group-hover:mr-1.5 tw:group-hover:max-w-[18px] tw:group-hover:opacity-100"
+      >arrow_back</mat-icon
+    >
+    Back
+  </button>
+
+  @if (isLoading()) {
+    <div class="tw:flex tw:justify-center">
+      <mat-progress-spinner diameter="32" mode="indeterminate"></mat-progress-spinner>
+    </div>
+  } @else if (notFound() || !user()) {
+    <mat-card>
+      <mat-card-content class="tw:text-center">
+        <h1 class="tw:text-xl tw:font-semibold tw:text-gray-900">User not found</h1>
+        <p class="tw:mt-2 tw:text-sm tw:text-gray-600">Try another user id.</p>
+      </mat-card-content>
+    </mat-card>
+  } @else {
+    <mat-card
+      class="tw:flex tw:flex-col tw:items-center tw:gap-4 tw:p-8 tw:shadow-md! tw:transition-all tw:ease-in-out tw:hover:shadow-primary!"
+    >
+      <mat-card-title>
+        <p class="tw:mt-1 tw:text-xs tw:text-gray-400">User #{{ user()!.id }}</p>
+      </mat-card-title>
+
+      <mat-card-subtitle>
+        <img
+          mat-card-avatar
+          class="tw:m-0! tw:h-24! tw:w-24! tw:border-primary tw:border-2"
+          [src]="user()!.avatar"
+          [alt]="user()!.first_name + ' ' + user()!.last_name"
+        />
+      </mat-card-subtitle>
+
+      <mat-card-content>
+        <div class="tw:text-center">
+          <h1 class="tw:text-2xl tw:font-semibold tw:text-secondary">
+            {{ user()!.first_name }} {{ user()!.last_name }}
+          </h1>
+          <p class="tw:mt-1 tw:text-sm tw:text-gray-600">{{ user()!.email }}</p>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  }
+</section>
