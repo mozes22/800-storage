@@ -1,0 +1,5 @@
+@reference "../../../styles/base/tailwind.css";
+
+:host {
+  @apply tw:block;
+}
